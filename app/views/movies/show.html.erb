@@ -4,6 +4,8 @@
     <h1>
       Movie #<%= @the_movie.id %> details
     </h1>
+
+<% if @current_user != nil %>
 <% current_user_bookmark = Bookmark.where({ :movie_id =>  @the_movie.id, :user_id => session.fetch(:user_id) })  %>
 
 <% bookmark = current_user_bookmark.at(0)  %>
@@ -15,13 +17,16 @@ User:
 <input type="hidden" name="the_user_id" value="<%= session.fetch(:user_id) %>">
 Movie:
 <input type="hidden" name="the_movie_id" value="<%= @the_movie.id %>">
-<button>Bookmark this movie!</button>
+
+<button>Bookmark this movie</button>
 
 </form>
-<% else  %>
-<a href="/delete_bookmark/<%= bookmark.id %> ">Unbookmark</a>
+<% else  %>                                    
+<a href="/delete_bookmark/<%= bookmark.id %>">Un-bookmark</a>
 
 <% end  %>
+<% end  %>
+
 
     <div>
       <div>
