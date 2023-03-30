@@ -1,5 +1,5 @@
-<div>
-  <div>
+<div class=" d-flex justify-content-center">
+  <div class = "shadow px-5 py-3 w-30 border-start border-info">
     <h1>
       List of all bookmarks
     </h1>
@@ -8,8 +8,8 @@
 
 <hr>
 
-<div>
-  <div>
+<div class=" d-flex justify-content-center">
+  <div class = "shadow px-5 py-3 w-30 border-start border-info">
     <h2>
       Add a new bookmark
     </h2>
@@ -17,7 +17,7 @@
     <form action="/insert_bookmark" method="post">
       <div>
 
-        <select name="query_movie_id">
+        <select name="query_movie_id" class="form-select" aria-label="Default select example">
           <% Movie.all.order(:title).each do |movie| %>
             <option value="<%= movie.id%>">
               <%= movie.title %>
@@ -28,7 +28,9 @@
 
       </div>
 
-      <button>
+      <hr>
+
+      <button class="btn btn-primary">
         Bookmark this movie 
       </button>
 
@@ -40,7 +42,7 @@
 <hr>
 <div>
   <div>
-    <table border="1">
+    <table border="1" class="table table-dark table-striped">
       <tr>
         <th>
           ID

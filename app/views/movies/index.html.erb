@@ -1,5 +1,5 @@
-<div>
-  <div>
+<div class=" d-flex justify-content-center">
+  <div class = "shadow px-5 py-3 w-30 border-start border-info">
     <h1>
       List of all movies
     </h1>
@@ -8,14 +8,14 @@
 
 <hr>
 
-<div>
-  <div>
+<div class=" d-flex justify-content-center">
+  <div class = "shadow px-5 py-3 w-30 border-start border-info">
     <h2>
       Add a new movie
     </h2>
 
     <form action="/insert_movie" method="post">
-      <div>
+      <div class="row mb-3">
         <label for="title_box">
           Title
         </label>
@@ -23,7 +23,7 @@
         <input type="text" id="title_box" name="query_title">
       </div>
 
-      <div>
+      <div class="row mb-3">
         <label for="year_box">
           Year
         </label>
@@ -31,7 +31,7 @@
         <input type="text" id="year_box" name="query_year">
       </div>
 
-      <div>
+      <div class="row mb-3">
         <label for="duration_box">
           Duration
         </label>
@@ -39,7 +39,7 @@
         <input type="text" id="duration_box" name="query_duration">
       </div>
 
-      <div>
+      <div class="row mb-3">
         <label for="director_id_box">
           Director
         </label>
@@ -47,7 +47,7 @@
         <input type="text" id="director_id_box" name="query_director_id">
       </div>
 
-      <div>
+      <div class="row mb-3">
         <label for="description_box">
           Description
         </label>
@@ -55,7 +55,7 @@
         <textarea id="description_box" name="query_description" rows="3"></textarea>
       </div>
 
-      <div>
+      <div class="row mb-3">
         <label for="image_box">
           Image
         </label>
@@ -63,7 +63,7 @@
         <input type="text" id="image_box" name="query_image">
       </div>
 
-      <button>
+      <button class="btn btn-primary">
         Create movie
       </button>
     </form>
@@ -75,14 +75,14 @@
 <hr>
 <div>
   <div>
-    <table border="1">
+    <table border="1" class="table table-dark table-striped">
       <tr>
         <th>
           ID
         </th>
 
         <th>
-          Title
+          Title 
         </th>
 
         <th>
