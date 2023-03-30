@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
     render({ :template => "movies/index.html.erb" })
   end
 
-  def show
+  def show 
     the_id = params.fetch("path_id")
 
     matching_movies = Movie.where({ :id => the_id })
