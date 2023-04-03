@@ -19,6 +19,67 @@
 
   <body>
 
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+  <div class="container-fluid">
+    
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+       
+        <li class="nav-item">
+         <a  class="nav-link" href="/movies">Movies<a/>
+         <!--
+          <a class="nav-link" href="#">Link</a>
+          -->
+        </li>
+
+
+        <li class="nav-item">
+        <a class="nav-link" href="/directors">Directors<a/>
+        </li>
+
+         <li class="nav-item">
+        <a class="nav-link" href="/actors">Actors<a/>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="/characters">Characters<a/>
+        </li>
+
+       
+       <% if session.fetch(:user_id) == nil %>
+    <li class="nav-item">
+     <a class="nav-link" href="/user_sign_up">Sign up<a/>
+   </li>
+    <li class="nav-item">
+     <a class="nav-link" href="/user_sign_in">Sign in<a/>
+   </li>
+   <% else %>
+   <li class="nav-item">
+     <a class="nav-link" href="/bookmarks">My Bookmarks<a/>
+   </li>
+    <li class="nav-item">
+     <a class="nav-link" href="/user_sign_out">Sign out<a/>
+   </li>
+   <% end %>
+  </ul>
+
+        
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<!--
   <ul>
    <li>
      <a href="/movies">Movies<a/>
@@ -32,8 +93,10 @@
    <li>
      <a href="/characters">Characters<a/>
    </li>
-   
+-->
 
+
+<!--
 <% if session.fetch(:user_id) == nil %>
     <li>
      <a href="/user_sign_up">Sign up<a/>
@@ -50,9 +113,26 @@
    </li>
    <% end %>
   </ul>
+   -->
 
+<!--
   <p style="color: green"><%= notice %></p>
   <p style="color: red"><%= alert %></p>
+  -->
+
+  <% if notice.present? %>
+<div class= "alert alert-success" role="alert"> 
+<%= notice %>
+</div>
+<% end %>
+
+<% if alert.present? %>
+<div class= "alert alert-warning" role="alert" >
+  <%= alert %>
+</div>
+<% end %>
+
+
 
     <%= yield %>
   </body>
